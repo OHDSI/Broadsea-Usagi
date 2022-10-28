@@ -1,0 +1,106 @@
+openapi: 3.0.1
+info:
+  title: Perseus
+  description: OHDSI Perseus API
+  version: "0.1"
+servers:
+- url: http://134.209.112.70
+paths:
+  /backend/api/info:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: backendApiInfoGET
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+      - url: http://134.209.112.70
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://134.209.112.70
+  /backend/api/get_cdm_versions:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: backendApiGet_cdm_versionsGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                example: {}
+                x-content-type: application/json
+              examples:
+                "0":
+                  value: |
+                    ["4","5.0.1","5.1.0","5.2.0","5.3.0","5.3.1","5.4","5","6"]
+      servers:
+      - url: http://134.209.112.70
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://134.209.112.70
+  /user/api/login:
+    post:
+      description: Auto generated using Swagger Inspector
+      operationId: userApiLoginPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/api_login_body'
+            examples:
+              "0":
+                value: "{\"email\": \"perseus@softwarecountry.com\", \"password\"\
+                  : \"perseus\"}"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              examples:
+                "0":
+                  value: |
+                    {"email":"perseus@softwarecountry.com","expires":"Fri, 21 Oct 2022 16:16:49 GMT","firstName":"Perseus","lastName":"Perseus","refresh_token":"pNpzXYOCM6oL8esS0pKSOYrKNGWSliC0mxR2CbrIRrsrq8TP5iCgz93OzU1dx5Mv4dcvhyFAFtjLwfGmBO88EGw75fBYJE61tcHW","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXJzZXVzIiwiZXhwIjoxNjY2MzY5MDA5LCJpYXQiOjE2NjYzMjU4MDl9.EOIaFiVaEfAhATjcV-It-mrD1twDkG6_INg5sR6VV1g","username":"perseus"}
+      servers:
+      - url: http://134.209.112.70
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://134.209.112.70
+components:
+  schemas:
+    api_login_body:
+      type: object
+      properties:
+        password:
+          type: string
+        email:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        refresh_token:
+          type: string
+        expires:
+          type: string
+        email:
+          type: string
+        token:
+          type: string
+        username:
+          type: string
+      example:
+        firstName: firstName
+        lastName: lastName
+        refresh_token: refresh_token
+        expires: expires
+        email: email
+        token: token
+        username: username
