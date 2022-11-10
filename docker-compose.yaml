@@ -1,8 +1,12 @@
 version: '2'
 
+
+
 services:
 
-  swagger_website:
+
+
+ swagger_website:
     build: .
     image: ohdsi/usagi_swagger_website:1.0.0
     container_name: broadsea-usagi-swagger-website
@@ -10,4 +14,4 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "80:70"
+      - "8080:8080"
